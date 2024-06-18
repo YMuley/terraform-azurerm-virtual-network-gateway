@@ -32,7 +32,7 @@ resource "azurerm_virtual_network_gateway" "vpn" {
    content {
      name = ip_configuration.value.name
      private_ip_address_allocation = ip_configuration.value.private_ip_address_allocation
-     subnet_id = var.subnet_output[format("%s/%s", ip_configuration.value.value.virtual_network_name, ip_configuration.value.value.subnet_name)].id
+     subnet_id = var.subnet_output[format("%s/%s", ip_configuration.value.virtual_network_name, ip_configuration.value.subnet_name)].id
      public_ip_address_id = var.public_ip_output[ip_configuration.value.public_ip_name].id
    }
   }
