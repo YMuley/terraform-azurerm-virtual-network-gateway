@@ -1,3 +1,3 @@
 locals {
-   vpn = {for vpn in var.var.vpn_list : vpn.name => vpn}
+   vpn = {for vpn in var.vpn_list : vpn.name => vpn}
 }
