@@ -18,7 +18,7 @@ resource "azurerm_virtual_network_gateway" "vpn" {
       asn                   = bgp_settings.value.asn
       peer_weight           = bgp_settings.value.peer_weight
       dynamic "peering_addresses" {
-       for_each = each.value.active_active == true ? [] : bgp_settings.value.peering_addresses
+       for_each = bgp_settings.value.peering_addresses
        content {
          ip_configuration_name = peering_addresses.value.ip_configuration_name
          apipa_addresses       = peering_addresses.value.apipa_addresses
